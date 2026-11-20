@@ -14,10 +14,10 @@ function App() {
 
       <Button2 />
 
-      <Student name="Som" age={30} isStudent={true} />
-      <Student name="Shekar" age={42} isStudent={false} />
-      <Student name="Raj" age={50} isStudent={false} />
-      <Student name="Coder" age={27} isStudent={true} />
+      <Student name="Som" age={20} isStudent={true} />
+      <Student name="Shekar" age={22} isStudent={false} />
+      <Student name="Raj" age={20} isStudent={false} />
+      <Student name="Coder" age={22} isStudent={true} />
 
 
       <Footer />

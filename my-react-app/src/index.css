@@ -37,3 +37,15 @@
   border: none;
   cursor: pointer;
 }
+
+
+
+.student {
+  font-size: 1.2em;
+  padding: 10px;
+  border: 1px solid hsl(0, 0%, 50%);
+}
+
+.student p {
+  margin: 0;
+}
