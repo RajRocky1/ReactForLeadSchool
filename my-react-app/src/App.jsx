@@ -1,3 +1,4 @@
+
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 import Card from './Card.jsx';
@@ -19,9 +20,10 @@ function App() {
       <Student name="Raj" age={20} isStudent={false} />
       <Student name="Coder" age={22} isStudent={true} />
 
+      <Student />
+      <Student name="Hari" />
 
       <Footer />
-
     </>
   );
 }
