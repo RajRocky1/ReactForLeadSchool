@@ -9,12 +9,31 @@ function List() {
     {id: 5, name: "pineapple", calories: 37}
   ];
 
-  fruits.sort((a, b) => a.name.localeCompare(b.name)); // alphabetical
-  // fruits.sort((a, b) => b.name.localeCompare(a.name)); // reverse alphabetical
-  // fruits.sort((a, b) => a.calories - b.calories); // low to high calories
-  // fruits.sort((a, b) => b.calories - a.calories); // high to low calories
+  // Sorting the fruits by name and calories
 
+  // fruits.sort((a, b) => a.name.localeCompare(b.name)); // alphabetical
+  // fruits.sort((a, b) => b.name.localeCompare(a.name)); // reverse alphabetical
+  // fruits.sort((a, b) => a.calories - b.calories); // low to high
+  // fruits.sort((a, b) => b.calories - a.calories); // high to low
+
+  // Previously I was displaying all the fruits
+
+  /*
   const listItems = fruits.map(fruit =>
+    <li key={fruit.id}>
+      {fruit.name}: &nbsp;
+      <b>{fruit.calories}</b>
+    </li>
+  );
+  */
+
+  // Filtering fruits with less than 100 calories
+
+  const lowCalFruits = fruits.filter(fruit => fruit.calories < 100);
+
+  // const highCalFruits = fruits.filter(fruit => fruit.calories >= 100);
+
+  const listItems = lowCalFruits.map(fruit =>
     <li key={fruit.id}>
       {fruit.name}: &nbsp;
       <b>{fruit.calories}</b>
@@ -27,3 +46,4 @@ function List() {
 }
 
 export default List;
+
