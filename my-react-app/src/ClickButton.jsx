@@ -1,10 +1,21 @@
-// import index from './index.css';
+
 function ClickButton() {
 
-  const handleClick = () => console.log("OUCH!");
+  // My first onClick example
+  // const handleClick = () => console.log("OUCH!");
+
+  // Passing a name to my click function
+  const handleClick2 = (name) => console.log(`${name} stop clicking me!`);
 
   return (
-    <button className = "btn-clk" onDoubleClick={handleClick}>Click me 😊</button>
+    <>
+      {/* My previous button */}
+      {/* <button onClick={handleClick}>Click me 😊</button> */}
+
+      <button onClick={() => handleClick2("Som")}>
+        Click me 😊
+      </button>
+    </>
   );
 }
 
