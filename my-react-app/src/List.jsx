@@ -1,4 +1,6 @@
 
+import PropTypes from 'prop-types';
+
 /*
 // My previous list example with sorting and filtering
 
@@ -43,12 +45,15 @@ function List() {
 }
 */
 
-// Now I'm passing the list from App using props
+// Adding default values to my reusable list component
 
-function List(props) {
+function List({ category = "Category", items = [] }) {
 
-  const category = props.category;
-  const itemList = props.items;
+  // Previously I was accessing the values using props
+  // const category = props.category;
+  // const itemList = props.items;
+
+  const itemList = items;
 
   const listItems = itemList.map(item =>
     <li key={item.id}>
@@ -64,5 +69,27 @@ function List(props) {
     </>
   );
 }
+
+// Defining the expected data types
+
+List.propTypes = {
+  category: PropTypes.string,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      calories: PropTypes.number
+    })
+  )
+};
+
+// This is how default props were used in older React versions
+
+/*
+List.defaultProps = {
+  category: "Category",
+  items: []
+};
+*/
 
 export default List;
