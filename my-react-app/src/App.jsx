@@ -7,6 +7,7 @@ import Button2 from './Button/Button2.jsx';
 import Student from './Student.jsx';
 import UserGreeting from './UserGreeting.jsx';
 import List from './List.jsx';
+import ClickButton from './ClickButton.jsx';
 
 function App() {
 
@@ -61,7 +62,11 @@ function App() {
       {fruits.length > 0 && <List items={fruits} category="Fruits" />}
       {vegetables.length > 0 && <List items={vegetables} category="Vegetables" />}
 
-      <List />
+      {/* Testing default values */}
+      {/* <List /> */}
+
+      <ClickButton />
+
       <Footer />
     </>
   );
