@@ -45,11 +45,21 @@ function App() {
       <UserGreeting isLoggedIn={true} username="Som" />
       <UserGreeting isLoggedIn={false} username="Shekar" />
 
-      {/* Previously I was using List without props */}
+      {/* My first list component */}
       {/* <List /> */}
 
-      <List items={fruits} category="Fruits" />
-      <List items={vegetables} category="Vegetables" />
+      {/* Displaying lists using props */}
+      {/* <List items={fruits} category="Fruits" /> */}
+      {/* <List items={vegetables} category="Vegetables" /> */}
+
+      {/* Conditional rendering using ternary operator */}
+      {/* {fruits.length > 0 ? <List items={fruits} category="Fruits" /> : null} */}
+      {/* {vegetables.length > 0 ? <List items={vegetables} category="Vegetables" /> : null} */}
+
+      {/* Using && instead of ternary operator */}
+
+      {fruits.length > 0 && <List items={fruits} category="Fruits" />}
+      {vegetables.length > 0 && <List items={vegetables} category="Vegetables" />}
 
       <Footer />
     </>
