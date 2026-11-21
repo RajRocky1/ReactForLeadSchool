@@ -1,4 +1,7 @@
 
+/*
+// My previous list example with sorting and filtering
+
 function List() {
 
   const fruits = [
@@ -9,28 +12,22 @@ function List() {
     {id: 5, name: "pineapple", calories: 37}
   ];
 
-  // Sorting the fruits by name and calories
+  // Sorting
+  // fruits.sort((a, b) => a.name.localeCompare(b.name));
+  // fruits.sort((a, b) => b.name.localeCompare(a.name));
+  // fruits.sort((a, b) => a.calories - b.calories);
+  // fruits.sort((a, b) => b.calories - a.calories);
 
-  // fruits.sort((a, b) => a.name.localeCompare(b.name)); // alphabetical
-  // fruits.sort((a, b) => b.name.localeCompare(a.name)); // reverse alphabetical
-  // fruits.sort((a, b) => a.calories - b.calories); // low to high
-  // fruits.sort((a, b) => b.calories - a.calories); // high to low
+  // Displaying all fruits
+  // const listItems = fruits.map(fruit =>
+  //   <li key={fruit.id}>
+  //     {fruit.name}: &nbsp;
+  //     <b>{fruit.calories}</b>
+  //   </li>
+  // );
 
-  // Previously I was displaying all the fruits
-
-  /*
-  const listItems = fruits.map(fruit =>
-    <li key={fruit.id}>
-      {fruit.name}: &nbsp;
-      <b>{fruit.calories}</b>
-    </li>
-  );
-  */
-
-  // Filtering fruits with less than 100 calories
-
+  // Filtering
   const lowCalFruits = fruits.filter(fruit => fruit.calories < 100);
-
   // const highCalFruits = fruits.filter(fruit => fruit.calories >= 100);
 
   const listItems = lowCalFruits.map(fruit =>
@@ -44,6 +41,28 @@ function List() {
     <ol>{listItems}</ol>
   );
 }
+*/
+
+// Now I'm passing the list from App using props
+
+function List(props) {
+
+  const category = props.category;
+  const itemList = props.items;
+
+  const listItems = itemList.map(item =>
+    <li key={item.id}>
+      {item.name}: &nbsp;
+      <b>{item.calories}</b>
+    </li>
+  );
+
+  return (
+    <>
+      <h3 className="list-category">{category}</h3>
+      <ol className="list-items">{listItems}</ol>
+    </>
+  );
+}
 
 export default List;
-
